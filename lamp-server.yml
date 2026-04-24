@@ -23,6 +23,12 @@
         name: mariadb105-server
         state: present
 
+    - name: Enable EPEL repository
+      dnf:
+        name: epel-release
+        state: present
+        ignore_errors: yes
+    
     - name: Install PHP and required modules
       dnf:
         name:
